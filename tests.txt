@@ -1,0 +1,16 @@
+from hc10_test import *
+
+addBox(scene)
+attacheBox(robot, scene, eef_link, box_name)
+
+addBox(scene, "box2", 1, 0.4, 0.2, -0.5, (0.2,0.2,0.2))
+addBox(scene, "box3", 1, 0.4, 0.2, -1, (0.3,0.3,0.3))
+addBox(scene, "box4", 1, -0.6, 0.1, -0.7, (0.1,0.1,0.1))
+addBox(scene, "box5", 1, 0.3, -0.55, -0.7, (0.25,0.25,0.25))
+
+jointPlanning(move_group)
+
+detacheBox(scene, eef_link, box_name)
+removeBox(scene, box_name)
+
+jointPlanning(move_group, c=3.1415)
